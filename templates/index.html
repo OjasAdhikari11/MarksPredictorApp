@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Mark Predictor</title>
+    <style>
+        h1    {color:black;} /* Css code for heading h1 */
+        h2    {color:blue;} /* Css code for heading h2 */
+        h3    {color:black;} /* Css code for heading h3 */
+        .button_css{
+        color: #494949 !important;
+        text-transform:uppercase;
+        text-decoration:none;
+        background: #d8d8d8;
+        padding: 20px;
+        border:4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        }
+
+        .button_css:hover {
+        color: #ffffff !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4se ease 0s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class = "login">
+        <center>
+            <form action="{{ url_for('predict')}}"method="post">
+                <h1>MARKS PREDICTION APP</h1>
+                <h3>By Ojas Adhikari</h3>
+                <h2>***Enter the no of hours you study per day***</h2>
+                <input align="center",type="number" name = "study_hours" placeholder="study hours" required="required" width="48" height="10"/>
+                <br>
+
+                <br>
+
+                <div class = "button_cont" align="center"><a class="button_css"  target="_blank" rel="nofollow noopener">
+                    <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong> </button></a>
+                </div>
+            </form>
+        </center>
+
+
+        <div>
+            <center>
+                <h2>{{ prediction_text }}</h2>
+            </center>
+        </div>
+
+    </div>
+
+</body>
+</html>
